@@ -13,8 +13,8 @@ export default function CityCard({ city }: { city: City }) {
           <p className="text-white">{city.officeCount} Offices</p>
         </div>
         <Image
-          width={120}
-          height={200}
+          width={230}
+          height={300}
           src={city.image}
           className="absolute w-full h-full object-cover"
           alt="thumbnails"
