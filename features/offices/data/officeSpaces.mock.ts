@@ -49,19 +49,19 @@ export const officeSpaces: OfficeSpace[] = [
     about: "About Remote Office Space",
     location: "Surabaya",
     rating: 4.9,
-    tags: ["Popular", "Star Class", "Secure"],
-    image: "/assets/images/thumbnails/thumbnails-1.png",
+    tags: ["Favorite", "Star Class", "Secure"],
+    image: "/assets/images/thumbnails/thumbnails-3.png",
     images: [
       "/assets/images/thumbnails/thumbnail-details-2.png",
       "/assets/images/thumbnails/thumbnail-details-3.png",
     ],
     features: [
+      "Sustainbility",
+      "Compact",
       "Global Event",
       "Privacy",
       "Free Move",
-      "Sustainbility",
       "Extra Snacks",
-      "Compact",
     ],
     salesContacts: [
       {
