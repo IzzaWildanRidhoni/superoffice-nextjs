@@ -1,4 +1,5 @@
 import CityCard from "../components/CityCard";
+import { cities } from "../data/cities.mock";
 
 export default function CitiesSection() {
   return (
@@ -17,9 +18,14 @@ export default function CitiesSection() {
       </div>
       <div className="swiper w-full">
         <div className="swiper-wrapper">
-          <div className="swiper-slide !w-fit first-of-type:pl-[calc((100%-1130px-60px)/2)] last-of-type:pr-[calc((100%-1130px-60px)/2)]">
-            <CityCard />
-          </div>
+          {cities.map((city) => (
+            <div
+              key={city.id}
+              className="swiper-slide !w-fit first-of-type:pl-[calc((100%-1130px-60px)/2)] last-of-type:pr-[calc((100%-1130px-60px)/2)]"
+            >
+              <CityCard city={city} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
