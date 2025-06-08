@@ -13,7 +13,9 @@ type Props = {
 };
 
 export default function OfficeSpaceDetailPage({ params }: Props) {
+
     const office = officeSpaces.find((space) => space.slug === params.slug);
+
 
     if (!office) {
         return notFound();
@@ -83,7 +85,7 @@ export default function OfficeSpaceDetailPage({ params }: Props) {
           </p>
           <hr className="border-[#F6F5FD]" />
           <h2 className="font-bold">You Get What You Need Most</h2>
-          <OfficeFeatures/>
+          <OfficeFeatures features={office.features}/>
           <hr className="border-[#F6F5FD]" />
           <div className="flex flex-col gap-[6px]">
             <h2 className="font-bold">Office Address</h2>

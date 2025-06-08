@@ -20,20 +20,18 @@ export const officeSpaces: OfficeSpace[] = [
     features: [
       "Global Event",
       "Privacy",
-      "Free Move",
-      "Sustainbility",
       "Extra Snacks",
       "Compact",
     ],
     salesContacts: [
       {
         name: "John Doe",
-        email: "john.doe@superoffice.com",
+        email: "john.doe@gmail.com",
         photo: "/assets/images/photos/photo-1.png",
       },
       {
         name: "Jane Doe",
-        email: "jane.doe@superoffice.com",
+        email: "jane.doe@gmail.com",
         photo: "/assets/images/photos/photo-2.png",
       },
     ],
@@ -66,12 +64,12 @@ export const officeSpaces: OfficeSpace[] = [
     salesContacts: [
       {
         name: "Alifian",
-        email: "alifian@superoffice.com",
+        email: "alifian@gmail.com",
         photo: "/assets/images/photos/photo-1.png",
       },
       {
         name: "Ujang Candra",
-        email: "ujang@superoffice.com",
+        email: "ujang@gmail.com",
         photo: "/assets/images/photos/photo-2.png",
       },
     ],
