@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import OfficeFeatures from "@/features/offices/components/OfficeFeatures";
 import OfficeHeader from "@/features/offices/components/OfficeHeader";
+import SalesContactCard from "@/features/offices/components/SalesContactCard";
 import { officeSpaces } from "@/features/offices/data/officeSpaces.mock";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -196,68 +197,9 @@ export default function OfficeSpaceDetailPage({ params }: Props) {
           <div className="flex flex-col rounded-[20px] border border-[#E0DEF7] p-[30px] gap-[20px] bg-white">
             <h2 className="font-bold">Contact Our Sales</h2>
             <div className="flex flex-col gap-[30px]">
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-4">
-                  <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
-                    <img
-                      src="/assets/images/photos/photo-1.png"
-                      className="w-full h-full object-cover"
-                      alt="photo"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Masayoshi</p>
-                    <p className="text-sm leading-[21px]">Sales Manager</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <a href="#">
-                    <img
-                      src="/assets/images/icons/call-green.svg"
-                      className="w-10 h-10"
-                      alt="icon"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/icons/chat-green.svg"
-                      className="w-10 h-10"
-                      alt="icon"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-4">
-                  <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
-                    <img
-                      src="/assets/images/photos/photo-2.png"
-                      className="w-full h-full object-cover"
-                      alt="photo"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Fuji Ovina</p>
-                    <p className="text-sm leading-[21px]">Sales Manager</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <a href="#">
-                    <img
-                      src="/assets/images/icons/call-green.svg"
-                      className="w-10 h-10"
-                      alt="icon"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/icons/chat-green.svg"
-                      className="w-10 h-10"
-                      alt="icon"
-                    />
-                  </a>
-                </div>
-              </div>
+            {office.salesContacts.map((contact,index) => (
+                <SalesContactCard key={index} salesContact={contact}/>
+            ))}
             </div>
           </div>
         </div>

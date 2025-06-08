@@ -71,7 +71,7 @@ export const officeSpaces: OfficeSpace[] = [
       },
       {
         name: "Ujang Candra",
-        email: "ujang.candra@superoffice.com",
+        email: "ujang@superoffice.com",
         photo: "/assets/images/photos/photo-2.png",
       },
     ],
