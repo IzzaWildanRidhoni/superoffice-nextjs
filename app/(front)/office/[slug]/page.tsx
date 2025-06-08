@@ -6,8 +6,12 @@ import { officeSpaces } from "@/features/offices/data/officeSpaces.mock";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export default async function OfficeSpaceDetailPage({ params }: {params: {slug: string}}) {
-  const {slug} = await params; 
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export default async function OfficeSpaceDetailPage(props: PageProps) {
+  const {slug} = await props.params; 
 
     const office = officeSpaces.find((space) => space.slug === slug);
 

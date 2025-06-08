@@ -5,14 +5,20 @@ import { notFound } from "next/navigation";
 import OfficeSpaceCard from "@/features/offices/components/OfficeSpaceCard";
 import Image from "next/image";
 
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
-export default async function CityDetailPage({ params }: {params: {slug: string}}) {
-  const {slug} = await params;
+export default async function CityDetailPage(props: PageProps) {
+  // await karena params dianggap Promise
+  const { slug } = await props.params;
+
   const city = cities.find((c) => c.slug === slug);
 
   if (!city) {
     notFound();
   }
+
 
   const cityOffices = officeSpaces.filter((space) => space.location === city.name);
 
