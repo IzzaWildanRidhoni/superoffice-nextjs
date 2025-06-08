@@ -109,16 +109,25 @@ export default function OfficeSpaceDetailPage({ params }: Props) {
         </div>
         <div className="w-[392px] flex flex-col shrink-0 gap-[30px]">
           <div className="flex flex-col rounded-[20px] border border-[#E0DEF7] p-[30px] gap-[30px] bg-white">
-            <div>
-              <p className="font-extrabold text-[32px] leading-[48px] text-[#0D903A]">
-                {office.price}
-              </p>
-              <p className="font-semibold mt-1">For 20 days working</p>
-            </div>
+            {office.isFullyBooked ? (
+              <div>
+                <p className="font-bold text-xl leading-[30px]">Sorry. This office is <span className="text-[#FF2D2D]">fully booked</span> at this momment, try next time</p>
+              </div>
+            ):(
+              <div>
+                <p className="font-extrabold text-[32px] leading-[48px] text-[#0D903A]">
+                  {office.price.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}
+                </p>
+                <p className="font-semibold mt-1">For 20 days working</p>
+              </div>
+            )}
+        
             <hr className="border-[#F6F5FD]" />
             <div className="flex flex-col gap-5">
               <div className="flex items-center gap-3">
-                <img
+                <Image
+                  width={30}
+                  height={30}
                   src="/assets/images/icons/verify.svg"
                   className="w-[30px] h-[30px]"
                   alt="icon"
@@ -128,7 +137,9 @@ export default function OfficeSpaceDetailPage({ params }: Props) {
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                <img
+                <Image
+                  width={30}
+                  height={30}
                   src="/assets/images/icons/verify.svg"
                   className="w-[30px] h-[30px]"
                   alt="icon"
@@ -138,7 +149,9 @@ export default function OfficeSpaceDetailPage({ params }: Props) {
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                <img
+                <Image
+                  width={30}
+                  height={30}
                   src="/assets/images/icons/verify.svg"
                   className="w-[30px] h-[30px]"
                   alt="icon"
@@ -150,25 +163,34 @@ export default function OfficeSpaceDetailPage({ params }: Props) {
             </div>
             <hr className="border-[#F6F5FD]" />
             <div className="flex flex-col gap-[14px]">
-              <a
-                href="booking.html"
-                className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]"
-              >
-                <img
-                  src="/assets/images/icons/slider-horizontal-white.svg"
-                  className="w-6 h-6"
-                  alt="icon"
-                />
-                <span>Book This Office</span>
-              </a>
-              <button className="flex items-center justify-center w-full rounded-full border border-[#000929] p-[16px_26px] gap-3 bg-white font-semibold">
-                <img
+              {office.isFullyBooked ? (
+                <button className="flex items-center justify-center w-full rounded-full border border-[#000929] p-[16px_26px] gap-3 bg-white font-semibold">
+                <Image
+                  width={60}
+                  height={60}
                   src="/assets/images/icons/save-add.svg"
                   className="w-6 h-6"
                   alt="icon"
                 />
                 <span>Save for Later</span>
               </button>
+              ):(
+                <a
+                href="booking.html"
+                className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]"
+              >
+                <Image
+                  width={60}
+                  height={60}
+                  src="/assets/images/icons/slider-horizontal-white.svg"
+                  className="w-6 h-6"
+                  alt="icon"
+                />
+                <span>Book This Office</span>
+              </a>
+              )}
+              
+              
             </div>
           </div>
           <div className="flex flex-col rounded-[20px] border border-[#E0DEF7] p-[30px] gap-[20px] bg-white">

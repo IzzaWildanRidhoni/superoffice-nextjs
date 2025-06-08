@@ -3,8 +3,8 @@ import { OfficeSpace } from "../types/officeSpace.types";
 export const officeSpaces: OfficeSpace[] = [
   {
     id: 1,
-    title: "Wildan Park Central Master",
-    slug: "wildan-park-central-master-silicon-valley-star-class",
+    title: "GoWork Jakarta",
+    slug: "gowork-jakarta",
     price: 1000000,
     duration: "20 Days",
     address: "Jl. Pahlawan No. 1, Jakarta",
@@ -37,7 +37,7 @@ export const officeSpaces: OfficeSpace[] = [
         photo: "/assets/images/photos/photo-2.png",
       },
     ],
-    isFullyBooked: false,
+    isFullyBooked: true,
   },
   {
     id: 2,
